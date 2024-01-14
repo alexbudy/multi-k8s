@@ -13,4 +13,11 @@ after_success:
   - docker build -t alexbudy/multi-client ./client 
   - docker build -t alexbudy/multi-nginx ./nginx 
   - docker build -t alexbudy/multi-server ./server
-  - docker build -t alexbudy/multi-worker ./worker 
+  - docker build -t alexbudy/multi-worker ./worker
+  # log in to CLI:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push to docker hub
+  - docker push alexbudy/multi-client
+  - docker push alexbudy/multi-nginx
+  - docker push alexbudy/multi-server
+  - docker push alexbudy/multi-worker
