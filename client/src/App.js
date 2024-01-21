@@ -19,7 +19,7 @@ function App() {
             rel="noopener noreferrer"
           >
             Learn React
-			small change
+			small change2
           </a>
           <Link to="/">Home</Link>
           <Link to="/otherpage">Other Page</Link>
