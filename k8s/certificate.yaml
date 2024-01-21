@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+ 
+kind: Certificate
+metadata:
+  name: alexbudy-shop-tls
+spec:
+  secretName: alexbudy-shop
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: alexbudy.shop
+  dnsNames:
+    - alexbudy.shop
+    - www.alexbudy.shop
